@@ -215,7 +215,7 @@ export default function Home() {
   useEffect(() => {
     function getMsToTarget() {
       const now = new Date();
-      const target = new Date(2025, 5, 2, 0, 0, 0, 0); // June is month 5 (0-based)
+      const target = new Date(2025, 5, 3, 0, 0, 0, 0); // June is month 5 (0-based)
       if (now >= target) {
         return 0;
       }
