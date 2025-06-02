@@ -1,0 +1,2 @@
+// Place your birthday music mp3 in the public directory and name it 'birthday.mp3'.
+// This is a placeholder file to remind you to add your own music.
