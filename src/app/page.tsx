@@ -88,30 +88,30 @@ export default function Home() {
   const [roses, setRoses] = useState(() =>
     Array.from({ length: 6 }, (_, i) => getRandomRose(i))
   );
-  const loveParticleCount = 38; // More particles for denser heart
+  // const loveParticleCount = 38; // More particles for denser heart
   const [balloons, setBalloons] = useState(() =>
     Array.from({ length: 6 }, (_, i) => getRandomBalloon(i))
   );
 
-  const shootLoveParticles = () => {
-    // Heart shape parametric: x = 16sin^3(t), y = 13cos(t)-5cos(2t)-2cos(3t)-cos(4t)
-    const particles = Array.from({ length: loveParticleCount }, (_, i) => {
-      const t = Math.PI * 2 * (i / loveParticleCount);
-      // Heart shape, scale and center for SVG overlay
-      const x = 60 + 70 * Math.pow(Math.sin(t), 3); // center x=60, scale=70 (was 38)
-      const y = 45 - 56 * (13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t)) / 16; // center y=45, scale=56 (was 30)
-      return {
-        id: Date.now() + i + Math.random(),
-        x,
-        y,
-        angle: t,
-        scale: 0.8 + 0.7 * Math.random(),
-        delay: Math.random() * 0.18,
-      };
-    });
-    setLoveParticles(particles);
-    setTimeout(() => setLoveParticles([]), 1400);
-  };
+  // const shootLoveParticles = () => {
+  //   // Heart shape parametric: x = 16sin^3(t), y = 13cos(t)-5cos(2t)-2cos(3t)-cos(4t)
+  //   const particles = Array.from({ length: loveParticleCount }, (_, i) => {
+  //     const t = Math.PI * 2 * (i / loveParticleCount);
+  //     // Heart shape, scale and center for SVG overlay
+  //     const x = 60 + 70 * Math.pow(Math.sin(t), 3); // center x=60, scale=70 (was 38)
+  //     const y = 45 - 56 * (13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t)) / 16; // center y=45, scale=56 (was 30)
+  //     return {
+  //       id: Date.now() + i + Math.random(),
+  //       x,
+  //       y,
+  //       angle: t,
+  //       scale: 0.8 + 0.7 * Math.random(),
+  //       delay: Math.random() * 0.18,
+  //     };
+  //   });
+  //   setLoveParticles(particles);
+  //   setTimeout(() => setLoveParticles([]), 1400);
+  // };
 
   const blowCandle = () => {
     if (candleBlown) return;
